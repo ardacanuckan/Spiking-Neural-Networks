@@ -1,0 +1,81 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "snn-benchmark"
+version = "0.1.0"
+description = "Benchmarking framework for spiking neural network architectures"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Arda Can Uckan", email = "ardacanuckan1@gmail.com"}
+]
+keywords = [
+    "spiking neural networks",
+    "neuromorphic computing",
+    "dendritic computation",
+    "attention mechanism",
+    "deep learning",
+    "PyTorch"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+requires-python = ">=3.8"
+dependencies = [
+    "torch>=2.0.0",
+    "torchvision>=0.15.0",
+    "numpy>=1.21.0",
+    "matplotlib>=3.4.0",
+    "tqdm>=4.62.0",
+    "pyyaml>=5.4.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0.0",
+    "black>=21.0.0",
+    "flake8>=3.9.0",
+    "mypy>=0.900",
+]
+notebooks = [
+    "jupyter>=1.0.0",
+    "ipywidgets>=7.6.0",
+]
+all = [
+    "snn-benchmark[dev,notebooks]",
+]
+
+[project.urls]
+Homepage = "https://github.com/ardacanuckan/Spiking-Neural-Networks"
+Documentation = "https://github.com/ardacanuckan/Spiking-Neural-Networks#readme"
+Repository = "https://github.com/ardacanuckan/Spiking-Neural-Networks"
+Issues = "https://github.com/ardacanuckan/Spiking-Neural-Networks/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["src*", "experiments*"]
+
+[tool.black]
+line-length = 100
+target-version = ["py38", "py39", "py310", "py311"]
+include = '\.pyi?$'
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+
+[tool.mypy]
+python_version = "3.8"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
