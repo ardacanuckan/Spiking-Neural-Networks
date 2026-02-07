@@ -136,6 +136,7 @@ python experiments/run_triple_comparison.py
 | `notebooks/01_CIFAR10_SNN_Benchmark.ipynb` | CIFAR-10 SNN vs ANN comparison |
 | `notebooks/02_Neuromorphic_Datasets.ipynb` | N-MNIST, DVS-Gesture, CIFAR10-DVS evaluation |
 | `notebooks/03_All_Models_MNIST.ipynb` | All five models trained and compared on MNIST |
+| `notebooks/04_CIFAR10_All_Models.ipynb` | All five SNN models + ANN baseline on CIFAR-10 |
 
 Each notebook is self-contained and can run on Google Colab with a T4 GPU.
 
@@ -164,7 +165,7 @@ Each notebook is self-contained and can run on Google Colab with a T4 GPU.
 │   ├── networks.py             # Network wrapper classes
 │   ├── results/                # JSON output from experiments
 │   └── figures/                # Generated comparison plots
-├── notebooks/                  # Colab-ready Jupyter notebooks
+├── notebooks/                  # Colab-ready Jupyter notebooks (includes CIFAR-10 benchmark)
 ├── requirements.txt
 └── pyproject.toml
 ```
